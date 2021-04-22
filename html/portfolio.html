@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <!--
-Step 1/5: Simple page !
+Step 2/5: Making a site !
 Objectives:
-1. Come up with a header for our future site and wrap it in a proper tag for a first-level heading.
-2. Create a second-level heading with the text "About me".
-3. Place your photo or any image that will represent me.
-4. Put at least one paragraph of text on the site: this will be the personal biography section.
-5. Create another second-level heading with the text "Portfolio".
-6. Place at least one image that will represent my work experience and achievements.
-7. Put a title or a project name under each image so that they don't appear out of context.
+1. Create a website header and place your <h1> element in it.
+2. Decide which elements you want to place in your biography block, group them with the <section> tag, and add the about id to this tag.
+3. Group the elements in the "Portfolio" section the same way. In this case, use the tag <section> and the id portfolio.
+4. Using the tag <section>, сreate another section with the id contacts and place your contact information in it.
+5. Create a footer; you can put any information in the footer.
+6. Add a navigation bar with anchor links to blocks with the id's about, portfolio, and contacts. Make the navigation bar part of the site's header.
 -->
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
 </head>
 <header>
+
+    <nav>
+        <ul>
+            <li><a href="#about" title="About me">About me</a></li>
+            <li><a href="#portfolio" title="portfolio">Portfolio</a></li>
+            <li><a href="#contacts" title="Contacts">Contacts</a></li>
+        </ul>
+    </nav>
+
     <h1>Bryan DIFFO, Full Stack Developer</h1>
-    <h2>About me</h2>
+
+    <section id="about">
+        <h2>About me</h2>
+    </section>
+
     <img src="../images/person.jpg" alt="This person doesn't exist at this point of the project">
 </header>
     <body>
@@ -27,11 +38,24 @@ Objectives:
             <p><b>Skills:</b> Java, HTML, CSS, Javascript</p>
         </div>
 
-        <header>
+        <section id="portfolio">
             <h2>Portfolio</h2>
-            <img src="../images/project1.png" alt="This project is the first one i did in HTML & CSS">
+            <img src="../images/project1.png" alt="This project is the first one i did in HTML & CSS" style="width: 50%">
             <p>Flashcards</p>
-        </header>
-
+        </section>
     </body>
+
+    <footer>
+        <section id="contacts">
+            <p>You can contact me at:
+                <a href="tel:+1234567890">+1234567890</a>
+                or shoot me an email here :
+                <a href="mailto:example@mail.com">example@mail.com</a>
+            </p>
+            <img src="../images/facebook.svg" alt="This project is the first one i did in HTML & CSS" style="border-radius: 30%; width: 50px">
+            <img src="../images/github.svg" alt="This project is the first one i did in HTML & CSS" style="border-radius: 30%; width: 50px">
+            <img src="../images/instagram.svg" alt="This project is the first one i did in HTML & CSS" style="border-radius: 30%; width: 50px">
+            <img src="../images/twitter.svg" alt="This project is the first one i did in HTML & CSS" style="border-radius: 30%; width: 50px">
+        </section>
+    </footer>
 </html>
