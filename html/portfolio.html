@@ -1,61 +1,91 @@
 <!DOCTYPE html>
 <!--
-Step 2/5: Making a site !
+Step 3/5: Adding styles !
 Objectives:
-1. Create a website header and place your <h1> element in it.
-2. Decide which elements you want to place in your biography block, group them with the <section> tag, and add the about id to this tag.
-3. Group the elements in the "Portfolio" section the same way. In this case, use the tag <section> and the id portfolio.
-4. Using the tag <section>, сreate another section with the id contacts and place your contact information in it.
-5. Create a footer; you can put any information in the footer.
-6. Add a navigation bar with anchor links to blocks with the id's about, portfolio, and contacts. Make the navigation bar part of the site's header.
+1. Reset default margins and paddings so that all the elements are displayed with the same indentation in different browsers.
+2. Use CSS Grid or Flexbox to rearrange the elements of the web page as you like.
+3. Change the height of the header of your site.
+4. Change the background color of the site header or set a cool background image.
+5. Set the height and width of the images on your site.
+6. Change the height of the footer of your site.
+7. Change the background color of the site footer.
+8. Add styles to other elements: this is up to you! You can also create additional HTML elements if you wish.
 -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Portfolio</title>
-</head>
-<header>
+    <head>
+        <meta charset="UTF-8">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    </head>
 
-    <nav>
-        <ul>
-            <li><a href="#about" title="About me">About me</a></li>
-            <li><a href="#portfolio" title="portfolio">Portfolio</a></li>
-            <li><a href="#contacts" title="Contacts">Contacts</a></li>
-        </ul>
-    </nav>
-
-    <h1>Bryan DIFFO, Full Stack Developer</h1>
-
-    <section id="about">
-        <h2>About me</h2>
-    </section>
-
-    <img src="../images/person.jpg" alt="This person doesn't exist at this point of the project">
-</header>
     <body>
-        <div>
-            <p>Hey, this will be a website around me... Let's do it</p>
-            <p><b>Skills:</b> Java, HTML, CSS, Javascript</p>
+        <div class="website-area">
+            <section id="home">
+                <header>
+                    <nav>
+                        <a href="#about" title="About me">About me</a>
+                        <a href="#portfolio" title="portfolio">Portfolio</a>
+                        <a href="#contacts" title="Contacts">Contacts</a>
+                        <a href="#home" title="Home">Home</a>
+                    </nav>
+                </header>
+
+                <section class="whoAmI">
+                    <h1>Bryan DIFFO,<br/> Full Stack Developer</h1>
+                </section>
+
+                <div class="about_container">
+                    <div class="about_box">
+                        <div class="global_box background_person"></div>
+                        <div class="global_box person"><img src="../images/person.jpeg" alt="a_person"></div>
+                    </div>
+
+                    <div class="about_box">
+                        <section id="about">
+                            <h2>About me</h2>
+                            <div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                                <br/>
+                                <p><b>Skills:</b> Java, Python, HTML, CSS, Javascript, etc... Y'en a ben trop.</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <section id="portfolio">
+                    <div class="portfolio_container">
+                        <h2 title="portfolio">Portfolio</h2>
+                        <div><img src="../images/project1.png" alt="portfolio_img"></div>
+                        <div><p>Flashcards</p></div>
+                    </div>
+                </section>
+
+                <section id="contacts">
+                    <div class="contacts_container">
+                        <h2 title="contacts">Contacts</h2>
+                        <p>You can contact me at:
+                            <a href="tel:+1234567890">+1234567890</a>
+                            <br/>
+                            or shoot me an email here :
+                            <a href="mailto:example@mail.com">example@mail.com</a>
+                        </p>
+                        <div>
+                            <img src="../images/facebook.svg" alt="facebook">
+                            <img src="../images/github.svg" alt="github">
+                            <img src="../images/instagram.svg" alt="instagram">
+                            <img src="../images/twitter.svg" alt="twitter">
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                        <p>Bryan DIFFO</p>
+                        <p>2021</p>
+                </footer>
+            </section>
         </div>
-
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <img src="../images/project1.png" alt="This project is the first one i did in HTML & CSS" style="width: 50%">
-            <p>Flashcards</p>
-        </section>
     </body>
-
-    <footer>
-        <section id="contacts">
-            <p>You can contact me at:
-                <a href="tel:+1234567890">+1234567890</a>
-                or shoot me an email here :
-                <a href="mailto:example@mail.com">example@mail.com</a>
-            </p>
-            <img src="../images/facebook.svg" alt="This project is the first one i did in HTML & CSS" style="border-radius: 30%; width: 50px">
-            <img src="../images/github.svg" alt="This project is the first one i did in HTML & CSS" style="border-radius: 30%; width: 50px">
-            <img src="../images/instagram.svg" alt="This project is the first one i did in HTML & CSS" style="border-radius: 30%; width: 50px">
-            <img src="../images/twitter.svg" alt="This project is the first one i did in HTML & CSS" style="border-radius: 30%; width: 50px">
-        </section>
-    </footer>
 </html>
