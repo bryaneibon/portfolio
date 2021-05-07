@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
-Step 3/5: Adding styles !
+Step 4/5: Pop-up windows !
 Objectives:
-1. Reset default margins and paddings so that all the elements are displayed with the same indentation in different browsers.
-2. Use CSS Grid or Flexbox to rearrange the elements of the web page as you like.
-3. Change the height of the header of your site.
-4. Change the background color of the site header or set a cool background image.
-5. Set the height and width of the images on your site.
-6. Change the height of the footer of your site.
-7. Change the background color of the site footer.
-8. Add styles to other elements: this is up to you! You can also create additional HTML elements if you wish.
+Let's create pop-ups with more detailed information about our projects and work experience.
+1. In front of each project/achievement, add a button that will trigger a pop-up window when pressed. Specify the open-window class for the buttons.
+2. In an HTML file, create a pop-up template. Add the window class to the tag in which your window will be wrapped.
+3. Write a script so that the pop-up window with the necessary information appears when the button is pressed.
+4. Complete your script so that the window can close.
+5. Write styles for your new elements.
 -->
 <html lang="en">
     <head>
@@ -59,7 +57,24 @@ Objectives:
                     <div class="portfolio_container">
                         <h2 title="portfolio">Portfolio</h2>
                         <div><img src="../images/project1.png" alt="portfolio_img"></div>
-                        <div><p>Flashcards</p></div>
+                        <div>
+                            <button id="open-window" class="open-window">Flashcards</button>
+
+                            <div class="window" id="window_container">
+                                <div class="modal">
+                                    <h1>Flashcards</h1>
+                                    <p>
+                                        You can see the project at the following link : <a href="https://github.com/bryaneibon/flashcard" title="Go to the flashcards project on GitHub" target="_blank">flashcards</a>
+                                        <br/>
+                                        I did project when i was studying the frontend on hyperskill. I created a web page with flip-down flash cards,
+                                        learned some HTML basics, and CSS to make beautiful design for every transition.
+                                    </p>
+
+                                    <button id="close-window">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </section>
 
@@ -87,5 +102,6 @@ Objectives:
                 </footer>
             </section>
         </div>
+        <script src="../assets/main.js"></script>
     </body>
 </html>
