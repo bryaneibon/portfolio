@@ -18,12 +18,8 @@ body {
 /*Site Header Design*/
 
 header {
-    background: url("../images/bg.jpg");
+    background-color: black;
     font-family: 'Major Mono Display', monospace;
-}
-
-header a {
-    padding: 1em 1em;
 }
 
 header a:link,
@@ -35,6 +31,7 @@ header a:visited {
 header a:hover {
     background-color: #BDBDBD;
     color: black;
+    padding: 2em 2em;
 }
 
 nav {
@@ -46,7 +43,7 @@ nav {
 .nav-links {
     display: flex;
     justify-content: space-around;
-    padding: 1em 1em;
+    padding: 2em 2em;
     width: 40%;
 }
 
@@ -154,7 +151,7 @@ img[alt="a_person"] {
 
 .about_container {
     display: flex;
-    height: 50vh;
+    height: 80vh;
     background-color: #D2D8D6;
     padding: 90px 200px;
 }
@@ -190,7 +187,8 @@ h2[title="portfolio"] {
     display: flex;
     flex-direction: column;
     text-align: center;
-    min-height: 75vh;
+    min-height: 90vh;
+    padding: 30px;
     background-color: #F8FAFA;
     margin: 0;
 }
@@ -254,6 +252,7 @@ h2[title="contacts"] {
     flex-direction: column;
     position: relative;
     text-align: center;
+    padding: 30px;
     height: 30vh;
 }
 
