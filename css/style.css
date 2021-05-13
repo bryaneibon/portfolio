@@ -2,173 +2,273 @@
 	--> style.css 
 	by Bryan D.
 */
-body {
-	margin: 0;
-	font-family: fantasy;
-}
-.website-area {
 
+* {
+    /*Remove basic styles*/
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: fantasy;
+}
+
+
 /*Site Header Design*/
+
 header {
-	background: url("../images/bg.jpg");
-	font-family: 'Major Mono Display', monospace;
+    background: url("../images/bg.jpg");
+    font-family: 'Major Mono Display', monospace;
 }
 
 header a {
-	padding: 1em 1em;
+    padding: 1em 1em;
 }
 
 header a:link,
-header a:visited
-{
-  	color: white;
-  	text-decoration: none; 
+header a:visited {
+    color: white;
+    text-decoration: none;
 }
 
-header a:hover 
-{
-	background-color: #BDBDBD;
-	color: black;
+header a:hover {
+    background-color: #BDBDBD;
+    color: black;
 }
 
-header > nav {
-  	display: grid;
-  	background-color: black;
-  	grid-template-columns: 150px 150px 150px 150px;
-  	justify-content: right;
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 1em;
+    width: 40%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    background-color: rgb(226, 226, 226);
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    transition: all 0.5s ease;
+    /* The transition here is to add an animation to the bugger when clicking on it*/
+}
+
+
+/* Now let's work on the mobile version... */
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: black;
+        color: rgb(226, 226, 226);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    /* .nav-links li {
+        opacity: 0;
+    } */
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+
+/* Let's finish with a cool animation of how the menu will appear on mobile... */
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.rotateBurger .upperSide {
+    transform: rotate(-45deg) translate(-5px, 6px)
+}
+
+.rotateBurger .middleSide {
+    opacity: 0;
+}
+
+.rotateBurger .bottomSide {
+    transform: rotate(45deg) translate(-5px, -6px)
 }
 
 .whoAmI {
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	background-image: url("../images/header_bg.jpeg");
-  	background-size: cover;
-  	min-height: 95vh;
-  	font-size: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-image: url("../images/header_bg.jpeg");
+    background-size: cover;
+    min-height: 95vh;
+    font-size: 25px;
 }
 
+
 /*About Section - Design*/
+
 img[alt="a_person"] {
     width: 100%;
 }
 
 .about_container {
-	display: flex;
-	height: 50vh;
-  	background-color: #D2D8D6;
-	padding: 90px 200px;
+    display: flex;
+    height: 50vh;
+    background-color: #D2D8D6;
+    padding: 90px 200px;
 }
 
 .about_box {
-	width: 50%;
+    width: 50%;
 }
 
 .global_box {
-  	height: 275px;
-  	width: 275px;
-  	box-shadow: 20px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
-
+    height: 275px;
+    width: 275px;
+    box-shadow: 20px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .background_person {
-  	background-image: linear-gradient(180deg, #F8FAFA, #D2D8D6);
+    background-image: linear-gradient(180deg, #F8FAFA, #D2D8D6);
 }
 
 .person {
-	position: relative;
-	left: 100px;
+    position: relative;
+    left: 100px;
     bottom: 225px;
 }
 
+
 /*Portfolio Section - Design*/
+
 h2[title="portfolio"] {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .portfolio_container {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	min-height: 75vh;
-	background-color: #F8FAFA;
-	margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 75vh;
+    background-color: #F8FAFA;
+    margin: 0;
 }
 
 img[alt="portfolio_img"] {
     width: 40%;
-	box-shadow: 20px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 20px 10px 10px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 button {
-	background-color: slategrey;
-	border-radius: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	color: #fff;
-	font-size: 15px;
-	padding: 10px 25px;
+    background-color: slategrey;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 25px;
 }
 
 .window {
-	background-color: rgba(0, 0, 0, 0.3);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	opacity: 0;
-	pointer-events: none;
-	transition: opacity 0.8s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
 }
 
 .window.show {
-	opacity: 1;
-    z-index: 1; /*To make sure that when the window is shown, it will be in front of all the other windows on the screen.*/
+    opacity: 1;
+    z-index: 1;
+    /*To make sure that when the window is shown, it will be in front of all the other windows on the screen.*/
     pointer-events: auto;
 }
 
 .modal {
-	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	padding: 30px 50px;
-	width: 600px;
-	max-width: 100%;
-	text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px 50px;
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
 }
 
 
 /*Contact Section - Design*/
+
 h2[title="contacts"] {
-	text-align: center;
-	text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .contacts_container {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	text-align: center;
-	height: 30vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    height: 30vh;
 }
 
-img[alt="facebook"], 
-img[alt="github"], 
-img[alt="instagram"], 
-img[alt="twitter"] 
-{
-	border-radius: 30%;
-	width: 30px;
+img[alt="facebook"],
+img[alt="github"],
+img[alt="instagram"],
+img[alt="twitter"] {
+    border-radius: 30%;
+    width: 30px;
 }
 
 footer {
-	background: black;
-	color: white;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'Major Mono Display', monospace;
+    background: black;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Major Mono Display', monospace;
 }
